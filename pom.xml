@@ -54,7 +54,7 @@
 
     <modules>
         <module>spring-cloud-autoyoung-dependencies</module>
-
+        <module>spring-cloud-autoyoung-consumer</module>
     </modules>
 
     <dependencyManagement>
@@ -199,7 +199,17 @@
                 <artifactId>rocketmq-spring-boot-starter</artifactId>
                 <version>${rocketmq.starter.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>0.2.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
+
+
     </dependencyManagement>
 
     <build>
@@ -309,6 +319,12 @@
         </profile>
 
     </profiles>
-
+   <dependencies>
+       <dependency>
+           <groupId>com.autoyoung.cloud</groupId>
+           <artifactId>spring-cloud-autoyoung-dependencies</artifactId>
+           <version>2.0.0-SNAPSHOT</version>
+       </dependency>
+   </dependencies>
 
 </project>
