@@ -23,6 +23,7 @@
 
     <properties>
         <!-- Dependency Versions -->
+        <spring-cloud.version>2.2.2.RELEASE</spring-cloud.version>
         <spring-cloud-commons.version>2.2.2.RELEASE</spring-cloud-commons.version>
         <spring-cloud-netflix.version>2.2.2.RELEASE</spring-cloud-netflix.version>
         <spring-cloud-openfeign.version>2.2.2.RELEASE</spring-cloud-openfeign.version>
@@ -54,7 +55,7 @@
 
     <modules>
         <module>spring-cloud-autoyoung-dependencies</module>
-        <module>spring-cloud-autoyoung-consumer</module>
+        <module>spring-cloud-autoyoung-service</module>
     </modules>
 
     <dependencyManagement>
