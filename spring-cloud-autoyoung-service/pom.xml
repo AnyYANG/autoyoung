@@ -26,10 +26,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <!-- Spring Cloud Begin -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
