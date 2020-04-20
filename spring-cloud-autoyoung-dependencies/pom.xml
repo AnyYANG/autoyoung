@@ -1,329 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>spring-cloud-dependencies-parent</artifactId>
-		<groupId>org.springframework.cloud</groupId>
-		<version>2.2.0.RELEASE</version>
-		<relativePath/>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.4.RELEASE</version>
 	</parent>
-
-	<groupId>com.autoyoung.cloud</groupId>
-	<artifactId>spring-cloud-autoyoung-dependencies</artifactId>
+	<groupId>com.autoyoung</groupId>
+	<artifactId>autoyoung-spring-cloud-alibaba-dependencies</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
+	<inceptionYear>2019-Now</inceptionYear>
+	<description>Demo project for Spring Boot</description>
 	<packaging>pom</packaging>
-	<name>spring-cloud-autoyoung-dependencies</name>
+
 	<properties>
-		<sentinel.version>1.7.1</sentinel.version>
-		<oss.version>3.1.0</oss.version>
-		<seata.version>1.1.0</seata.version>
-		<nacos.client.version>1.2.1</nacos.client.version>
-		<nacos.config.version>0.8.0</nacos.config.version>
-		<spring.context.support.version>1.0.6</spring.context.support.version>
-	    <spring-cloud-alibaba.version>0.2.2.RELEASE</spring-cloud-alibaba.version>
+		<!-- Environment Settings -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<nacos.version>2.1.0.RELEASE</nacos.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+		<spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 
-			<!--Nacos-->
 			<dependency>
-				<groupId>com.alibaba.nacos</groupId>
-				<artifactId>nacos-client</artifactId>
-				<version>${nacos.client.version}</version>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.nacos</groupId>
-				<artifactId>nacos-config</artifactId>
-				<version>${nacos.config.version}</version>
-			</dependency>
-
-			<!-- Sentinel -->
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-core</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-parameter-flow-control</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-extension</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-apollo</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-zookeeper</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-nacos</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-redis</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-datasource-consul</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-web-servlet</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-zuul-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-transport-simple-http</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-annotation-aspectj</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-dubbo-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-apache-dubbo-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-reactor-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-cluster-server-default</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-cluster-client-default</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-spring-webflux-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-api-gateway-adapter-common</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.csp</groupId>
-				<artifactId>sentinel-spring-webmvc-adapter</artifactId>
-				<version>${sentinel.version}</version>
-			</dependency>
-
-			<!--Alibaba Seata-->
-			<dependency>
-				<groupId>io.seata</groupId>
-				<artifactId>seata-spring-boot-starter</artifactId>
-				<version>${seata.version}</version>
-			</dependency>
-
-			<!-- Own dependencies  -->
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-alibaba-sentinel-datasource</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<!-- Own dependencies - Starters -->
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-circuitbreaker-sentinel</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-nacos-config-server</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-bus-rocketmq</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-alibaba-sidecar</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<!-- Dubbo -->
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-starter-dubbo</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.alibaba.spring</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>${spring.context.support.version}</version>
-			</dependency>
-
 
 			<dependency>
 				<groupId>com.alibaba.cloud</groupId>
 				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
 				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
-			<!-- Testing Dependencies -->
 
 		</dependencies>
 	</dependencyManagement>
 
-	<profiles>
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
 
-		<profile>
-			<id>spring</id>
-			<repositories>
-				<repository>
-					<id>spring-snapshots</id>
-					<name>Spring Snapshots</name>
-					<url>https://repo.spring.io/libs-snapshot-local</url>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</repository>
-				<repository>
-					<id>spring-milestones</id>
-					<name>Spring Milestones</name>
-					<url>https://repo.spring.io/libs-milestone-local</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</repository>
-				<repository>
-					<id>spring-releases</id>
-					<name>Spring Releases</name>
-					<url>https://repo.spring.io/release</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
-			<pluginRepositories>
-				<pluginRepository>
-					<id>spring-snapshots</id>
-					<name>Spring Snapshots</name>
-					<url>https://repo.spring.io/libs-snapshot-local</url>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</pluginRepository>
-				<pluginRepository>
-					<id>spring-milestones</id>
-					<name>Spring Milestones</name>
-					<url>https://repo.spring.io/libs-milestone-local</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</pluginRepository>
-				<pluginRepository>
-					<id>spring-releases</id>
-					<name>Spring Releases</name>
-					<url>https://repo.spring.io/libs-release-local</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</pluginRepository>
-			</pluginRepositories>
-		</profile>
+	<build>
+		<plugins>
+			<!-- Compiler 插件, 设定 JDK 版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
 
-	</profiles>
+			<!-- 打包 jar 文件时，配置 manifest 文件，加入 lib 包的 jar 依赖 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<configuration>
+							<archive>
+								<manifest>
+									<!-- Add directory entries -->
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+									<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+									<addClasspath>true</addClasspath>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- resource -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+
+			<!-- install -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+			</plugin>
+
+			<!-- clean -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+			</plugin>
+
+			<!-- ant -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+
+			<!-- dependency -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- Java Document Generate -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<executions>
+						<execution>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- YUI Compressor (CSS/JS压缩) -->
+				<plugin>
+					<groupId>net.alchim31.maven</groupId>
+					<artifactId>yuicompressor-maven-plugin</artifactId>
+					<version>1.5.1</version>
+					<executions>
+						<execution>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>compress</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<jswarn>false</jswarn>
+						<nosuffix>true</nosuffix>
+						<linebreakpos>30000</linebreakpos>
+						<force>true</force>
+						<includes>
+							<include>**/*.js</include>
+							<include>**/*.css</include>
+						</includes>
+						<excludes>
+							<exclude>**/*.min.js</exclude>
+							<exclude>**/*.min.css</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<!-- 资源文件配置 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>aliyun-repos</id>
+			<name>Aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>sonatype-repos</id>
+			<name>Sonatype Repository</name>
+			<url>https://oss.sonatype.org/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>sonatype-repos-s</id>
+			<name>Sonatype Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-repos</id>
+			<name>Aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
