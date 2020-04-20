@@ -11,8 +11,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 这也是Spring Cloud做了封装的好处所在，如果对Eureka、Consul这些注册中心的整合还不熟悉的可以看看以前的这篇：
  * Spring Cloud构建微服务架构：服务注册与发现（Eureka、Consul）。
  */
-@EnableDiscoveryClient
 @SpringBootApplication
+@EnableDiscoveryClient
 public class SpringCloudAutoyoungConsumerApplication {
 
     public static void main(String[] args) {
