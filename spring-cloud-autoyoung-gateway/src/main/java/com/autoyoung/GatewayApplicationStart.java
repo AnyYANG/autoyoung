@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient(autoRegister = true)
 @EnableFeignClients
 public class GatewayApplicationStart {
     public static void main(String[] args) {

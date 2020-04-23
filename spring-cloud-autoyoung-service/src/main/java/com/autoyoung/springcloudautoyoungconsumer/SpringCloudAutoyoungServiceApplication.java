@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * Spring Cloud构建微服务架构：服务注册与发现（Eureka、Consul）。
  */
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient(autoRegister = true)
 @EnableFeignClients
 public class SpringCloudAutoyoungServiceApplication {
     public static void main(String[] args) {
