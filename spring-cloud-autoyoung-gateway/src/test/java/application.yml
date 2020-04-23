@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: nacos-mygateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 123.113.182.69:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: NACOS-CONSUMER
+          uri: lb://nacos-myprovider
+          predicates:
+            - Method=GET,POST
+
+server:
+  port: 9000
+
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

@@ -18,13 +18,13 @@ package com.autoyong.consumer.util;
 
 public class UrlCleaner {
 
-	public static String clean(String url) {
-		System.out.println("enter urlCleaner");
-		if (url.matches(".*/echo/.*")) {
-			System.out.println("change url");
-			url = url.replaceAll("/echo/.*", "/echo/{str}");
-		}
-		return url;
-	}
+    public static String clean(String url) {
+        System.out.println("enter urlCleaner :" + url);
+        if (url.matches(".*/echo/.*")) {
+            url = url.replaceAll("/echo/.*", "/echo/{str}");
+            System.out.println("change url:" + url);
+        }
+        return url;
+    }
 
 }

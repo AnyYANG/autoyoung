@@ -1,19 +1,20 @@
 package com.autoyong.consumer.api;
 
+import com.autoyong.consumer.comsumer.EchoServiceFallback;
 import com.autoyong.consumer.config.FeignConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "service-provider", fallback = EchoServiceFallback.class,
+@FeignClient(name = "nacos-myprovider", fallback = EchoServiceFallback.class,
 			configuration = FeignConfiguration.class)
 public interface EchoService {
 
 		@GetMapping("/echo/{str}")
 		String echo(@PathVariable("str") String str);
 
-		@GetMapping("/divide")
+		@GetMapping("/div")
 		String divide(@RequestParam("a") Integer a, @RequestParam("b") Integer b);
 
 		default String divide(Integer a) {
